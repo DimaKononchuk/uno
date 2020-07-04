@@ -1,0 +1,150 @@
+$w1:768px;
+$w2:400px;
+@font-face {
+font-family: 'HoneyScript';
+    
+    src:    url('https://nomail.com.ua/files/eot/0e446bfab952c170640611971b235737.eot?#iefix') format('embedded-opentype'),
+            url('https://nomail.com.ua/files/woff/0e446bfab952c170640611971b235737.woff') format('woff'),
+            url('https://nomail.com.ua/files/woff2/0e446bfab952c170640611971b235737.woff2') format('woff2');
+}
+@font-face {
+font-family: 'HoneyScript-light';
+    
+    src:    url('https://nomail.com.ua/files/eot/7ce37c58b06c0bb6900b5c310dbb03ad.eot?#iefix') format('embedded-opentype'),
+            url('https://nomail.com.ua/files/woff/7ce37c58b06c0bb6900b5c310dbb03ad.woff') format('woff'),
+            url('https://nomail.com.ua/files/woff2/7ce37c58b06c0bb6900b5c310dbb03ad.woff2') format('woff2');
+}
+
+
+
+.header {
+	position: relative;
+	padding:0 200px;
+	background:url(../img/header_img.png)  ;
+	background-repeat: no-repeat;
+	padding-top: 40px;
+	padding-bottom: 298px;
+
+	&__body {
+		display: flex;
+		justify-content:space-between;
+		align-items:center;
+
+		h1{
+			font-family:"HoneyScript";
+			font-size: 54px;
+			line-height: 58px;
+			font-weight: 600;
+			letter-spacing: 0.01em;
+			color: #535353;
+			margin:0;
+		} 
+	}
+	&__title {
+		display: flex;
+		justify-content:center;
+		align-items:center;
+		text-align: center;
+		font-family: "HoneyScript";
+		font-size: 80px;
+		line-height: 1.2;
+		font-weight: 600;
+		color: #535353;
+		margin-top:238px;
+		//padding-bottom: 298px;
+	}
+}
+.header-burger {
+	position: relative;
+	display: flex;
+	flex-direction:column;
+	width: 25px;
+	
+	span{
+		width: 25px;
+		margin: 2px 0;
+		border: 1px solid #535353;
+		transition:all 0.1s ease 0s;
+
+	}
+	&.active{
+		
+		span:first-child{
+			transform:rotate(45deg);
+			
+		}
+		span:nth-child(2){
+			display: none;
+			
+		}
+		span:last-child{
+			position: absolute;
+			transform:rotate(-45deg);
+			
+		}
+	}
+}
+.header {
+	
+}
+.header-menu {
+	position:absolute;
+	display: flex;
+	flex-direction:row;
+	left:38%; 
+	top:45px;
+	transition:all 0.2s ease 0s;
+	transform:translateY(-1000%);
+	&.active{
+		transform:translateY(0%);
+	}
+	span{
+		margin:0 20px;
+		transition:all 0.1s ease 0s;
+		font-family: "Inconsolata";
+		font-size: 32px;
+		line-height: 1.2;
+		font-weight: 600;
+		color: #535353;
+		&:hover{
+			color:#fff;
+		}
+	}	
+}
+
+@media(max-width: $w1){
+	.header{
+		padding:0 100px;
+		padding-top: 40px;
+
+		&__title{
+			margin-top: 138px;
+			padding-bottom: 200px;
+		}
+	}
+	.header-menu{
+		top:20px;
+		flex-direction:column;
+		span{
+			text-align: center;
+			padding:0 10px;
+		}
+	}
+}
+@media(max-width: $w2){
+	.header{
+		padding:0 50px;
+		padding-top: 20px;
+
+		&__title{
+			margin-top: 40px;
+			padding-bottom: 100px;
+		}	
+	}
+	.header-menu{
+		left:35%;
+		span{
+			font-size: 24px;
+		}
+	}
+}
